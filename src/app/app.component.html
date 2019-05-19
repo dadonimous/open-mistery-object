@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="mistery-object-title jumbotron text-center">
+		<h1 class="m0">Open mistery item</h1>
+		<p class="hidden-xs">
+			Crack open the mistery object with force. But, be careful, too much force can damage it beyond repair!
+		</p>
+	</div>
+	<div class="damagers-info hidden-xs">
+		<h4 class="m0">Mistery item health: {{generatedHardObject.getStatusMessage()}}</h4>
+	</div>
+	<health-bar [hardObject]="generatedHardObject"></health-bar>
+	<div class="mistery-object-container-outer text-center">
+		<div class="row">
+			<div class="col-xs-12">
+				<hint [hardObject]="generatedHardObject" (hintAsked)="handleNewHint($event)"></hint>
+				<div class="mistery-object-container-inner">
+					<div class="jumbotron mistery-object">
+						<h1 class="m0">{{generatedHardObject.objectDiscovery}}</h1>
+						<p class="mb0">Health: {{generatedHardObject.currentHealth}}</p>
+					</div>
+				</div>
+			</div>
+			<div [ngClass]="{'col-xs-12': true, 'hidden': generatedHardObject.currentHealth == 0 }">
+				<div class="damagers-info hidden-xs">
+					<h4 class="m0">Try to use some of the actions below to crack it open. Just click on the icon!</h4>
+				</div>
+				<div class="damagers-container">
+					<div class="damagers-container-inner">
+						<div class="row">
+							<damager *ngFor="let damagerItem of damagers" [damager]="damagerItem" (damageDone)="damageReceived($event)"></damager>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

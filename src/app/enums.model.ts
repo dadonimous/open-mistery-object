@@ -1,0 +1,1 @@
+export enum HardObjectState { New = 1, Damaged = 2, Opened = 3, Ruined = 4 }
