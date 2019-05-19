@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
 	factory: Factory;
 	damagers: DamagerAbstract[];
 	generatedHardObject: HardObjectAbstract;
+	hint: string = null;
   
 	constructor(private toastr: ToastrService) {
 		this.factory = new Factory();
@@ -23,10 +24,11 @@ export class AppComponent implements OnInit {
 	
 	damageReceived(damage: number) {
 		this.generatedHardObject.receiveDamage(damage);
-	}
-	
-	handleNewHint(message: string): void {
-		this.toastr.success(message);
+		
+		this.hint = this.generatedHardObject.getHint();
+		if (this.hint != null && this.hint != undefined && this.hint.length > 0) {
+			this.toastr.info(this.hint);
+		}
 	}
   
 	ngOnInit() {

@@ -80,13 +80,9 @@ export abstract class HardObjectAbstract {
 	*/
 	public getHint(): string {
 		let hint: string = "";
-		if (this.hintList != null && this.hintList.length > 0)
+		if (this.hintList != null && this.hintList.length > 0 && this.hintList.length > this._hintIndex)
 		{
-			if (this.hintList.length > this._hintIndex)
-				hint = "Here's a hint: " + this.hintList[this._hintIndex];
-			else
-				hint = "Here's a hint: " + this.hintList[this.hintList.length - 1];
-			
+			hint = "Here's a hint: " + this.hintList[this._hintIndex];			
 			this._hintIndex = this._hintIndex + 1;
 		}
 		

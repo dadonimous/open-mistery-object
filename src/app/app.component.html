@@ -5,14 +5,13 @@
 			Crack open the mistery object with force. But, be careful, too much force can damage it beyond repair!
 		</p>
 	</div>
-	<div class="damagers-info hidden-xs">
+	<div class="mb5 hidden-xs">
 		<h4 class="m0">Mistery item health: {{generatedHardObject.getStatusMessage()}}</h4>
 	</div>
 	<health-bar [hardObject]="generatedHardObject"></health-bar>
 	<div class="mistery-object-container-outer text-center">
 		<div class="row">
 			<div class="col-xs-12">
-				<hint [hardObject]="generatedHardObject" (hintAsked)="handleNewHint($event)"></hint>
 				<div class="mistery-object-container-inner">
 					<div class="jumbotron mistery-object">
 						<h1 class="m0">{{generatedHardObject.objectDiscovery}}</h1>

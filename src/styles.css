@@ -22,6 +22,9 @@ body {
 .mt10 {
 	margin-top: 10px;
 }
+.mb5 {
+	margin-bottom: 5px;
+}
 .mb10 {
 	margin-botom: 10px;
 }
@@ -68,17 +71,19 @@ body {
 	text-shadow: 0 4px 8px rgb(0, 4, 7);
 }
 .damagers-info {
-	text-align: left;
-	margin-bottom: 5px;
+	/*text-align: left;*/
+	padding: 10px 0;
+	background-color: rgba(0, 0, 0, 0.3);
 }
 .damagers-container {
-	background-color: rgba(78, 62, 16, 0.7) !important;
-	background: linear-gradient(rgba(78, 62, 16, 0.7), rgba(78, 62, 16, 0.7) 60%, rgba(170, 140, 57, 0.3) 100%) !important;
+	/*background-color: rgba(78, 62, 16, 0.7) !important;
+	background: linear-gradient(rgba(78, 62, 16, 0.7), rgba(78, 62, 16, 0.7) 60%, rgba(170, 140, 57, 0.3) 100%) !important;*/
 }
 .damagers-container-inner {
-	box-shadow: inset 0 4px 8px rgba(11, 8, 0, 0.8);
-	border-bottom: 2px solid rgba(255, 219, 116, 0.6);
+	/*box-shadow: inset 0 4px 8px rgba(11, 8, 0, 0.8);
+	border-bottom: 2px solid rgba(255, 219, 116, 0.6);*/
 	padding-bottom: 30px;
+	color: rgb(255, 242, 206);
 }
 .damager-container {
 	padding: 30px 0 0 0;
@@ -124,6 +129,12 @@ body {
 	text-shadow: 0 4px 8px rgb(84, 184, 136);
 	background: radial-gradient(circle at 50% 20%, rgb(198, 245, 222), rgb(39, 118, 80) 40%, rgb(84, 184, 136) 95%);
 	box-shadow: inset 0 0 16px rgba(39, 118, 80, 0.8);
+	font-size: 50px;
+	-webkit-transition: font-size 0.2s;
+	-moz-transition: font-size 0.2s;
+	-o-transition: font-size 0.2s;
+    transition: font-size 0.2s;
+	transition-timing-function: ease-in;
 }
 .damager-container-inner.invalid .damager,
 .damager-container-inner.invalid:hover .damager {
@@ -149,5 +160,8 @@ body {
 	.damager {
 		line-height: 82px;
 		font-size: 30px;
+	}
+	.damager-container-inner:hover .damager {
+		font-size: 40px !important;
 	}
 }
