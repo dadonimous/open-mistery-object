@@ -3,7 +3,6 @@ import { ToastrService } from 'ngx-toastr';
 import { DamagerAbstract } from './damager.abstract.model';
 import { HardObjectAbstract } from './hard.object.abstract.model';
 import { Factory } from './factory.model';
-import * as $ from 'jquery';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,6 +17,10 @@ export class AppComponent implements OnInit {
   
 	constructor(private toastr: ToastrService) {
 		this.factory = new Factory();
+		this.initializeObjects();
+	}
+	
+	initializeObjects() {
 		this.damagers = this.factory.getDamagers();
 		this.generatedHardObject = this.factory.getRandomHardObject();
 	}
@@ -30,10 +33,10 @@ export class AppComponent implements OnInit {
 			this.toastr.info(this.hint);
 		}
 	}
-  
-	ngOnInit() {
-	  $(function() {
-		  //alert("jQuery properly initialized!");
-	  });
+	
+	refresh($event) {
+		this.initializeObjects();
 	}
+  
+	ngOnInit() {}
 }
